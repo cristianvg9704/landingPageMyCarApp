@@ -6,6 +6,7 @@ Landing page para MyCar, la aplicación móvil que ayuda a organizar los ingreso
 
 - **Vite** - Build tool y dev server ultra rápido
 - **React 18** - Biblioteca de UI
+- **React Router DOM** - Enrutamiento para páginas separadas
 - **Tailwind CSS** - Framework de CSS utility-first
 - **JavaScript (ES6+)** - Lenguaje de programación
 
@@ -18,16 +19,22 @@ landingPage/
 │   │   ├── Navigation.jsx
 │   │   ├── Hero.jsx
 │   │   ├── ProductInfo.jsx
+│   │   ├── UserTypes.jsx
 │   │   ├── Features.jsx
 │   │   ├── Newsletter.jsx
+│   │   ├── PrivacyPolicy.jsx
 │   │   └── Footer.jsx
-│   ├── App.jsx              # Componente principal
+│   ├── pages/               # Páginas de la aplicación
+│   │   ├── Home.jsx         # Página principal
+│   │   └── PrivacyPolicyPage.jsx  # Página de privacidad
+│   ├── App.jsx              # Componente principal con rutas
 │   ├── main.jsx             # Punto de entrada
 │   └── index.css            # Estilos globales con Tailwind
 ├── index.html               # HTML principal
 ├── vite.config.js           # Configuración de Vite
 ├── tailwind.config.js       # Configuración de Tailwind
 ├── postcss.config.js        # Configuración de PostCSS
+├── netlify.toml             # Configuración de Netlify (SPA routing)
 └── package.json             # Dependencias del proyecto
 ```
 
@@ -80,15 +87,21 @@ O simplemente arrastra la carpeta `dist` a [app.netlify.com/drop](https://app.ne
 ```
 3. Ejecuta: `npm run deploy`
 
-## 🎨 Componentes
+## 🎨 Componentes y Páginas
 
-- **Navigation** - Barra de navegación fija con logo MyCar
+### Componentes
+- **Navigation** - Barra de navegación fija con logo MyCar y enlaces
 - **Hero** - Sección principal destacando la gestión de ingresos de vehículos
 - **ProductInfo** - Información sobre MyCar y sus beneficios
 - **UserTypes** - Sección destacando los dos tipos de usuarios (conductores y dueños)
 - **Features** - Características: registro diario, múltiples servicios, estadísticas
-- **Newsletter** - Formulario de suscripción para acceso anticipado
-- **Footer** - Pie de página con información de contacto
+- **Newsletter** - Formulario de suscripción Mailchimp para acceso anticipado
+- **PrivacyPolicy** - Componente con la política de privacidad completa
+- **Footer** - Pie de página con información de contacto y enlaces
+
+### Páginas
+- **Home** (`/`) - Landing page principal con todas las secciones
+- **PrivacyPolicyPage** (`/privacidad`) - Página dedicada a la política de privacidad
 
 ## 📱 Sobre MyCar
 

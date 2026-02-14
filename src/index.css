@@ -27,3 +27,49 @@ body {
 .fade-in {
   animation: fadeIn 0.6s ease-out;
 }
+
+/* Mailchimp Form Styles */
+#mc_embed_signup {
+  background: transparent !important;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+#mc_embed_signup .mc-field-group {
+  margin-bottom: 0;
+}
+
+#mc_embed_signup .asterisk {
+  color: #ef4444;
+}
+
+#mce-error-response,
+#mce-success-response {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+#mce-error-response {
+  background-color: #ef4444;
+  color: white;
+}
+
+#mce-success-response {
+  background-color: #10b981;
+  color: white;
+}
+
+#mc_embed_signup input.mce_inline_error {
+  border-color: #ef4444 !important;
+}
+
+#mc_embed_signup div.mce_inline_error {
+  background-color: transparent !important;
+  color: #ef4444 !important;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  padding: 0;
+}
