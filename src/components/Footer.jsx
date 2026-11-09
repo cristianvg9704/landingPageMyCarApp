@@ -1,6 +1,10 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const Footer = () => {
+  const { t } = useLanguage();
+  const tn = t.nav;
+  const tr = t.footer;
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -24,11 +28,11 @@ const Footer = () => {
               <h3 className="text-xl font-bold mb-4 hover:text-indigo-400 transition">MyCar</h3>
             </Link>
             <p className="text-gray-400">
-              Organiza los ingresos de tus vehículos de forma inteligente.
+              {tr.tagline}
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Enlaces</h4>
+            <h4 className="font-semibold mb-4">{tr.links}</h4>
             <ul className="space-y-2 text-gray-400">
               {isHomePage ? (
                 <>
@@ -37,7 +41,7 @@ const Footer = () => {
                       onClick={() => scrollToSection('producto')}
                       className="hover:text-white transition"
                     >
-                      Producto
+                      {tn.product}
                     </button>
                   </li>
                   <li>
@@ -45,7 +49,7 @@ const Footer = () => {
                       onClick={() => scrollToSection('caracteristicas')}
                       className="hover:text-white transition"
                     >
-                      Características
+                      {tn.features}
                     </button>
                   </li>
                   <li>
@@ -53,14 +57,14 @@ const Footer = () => {
                       onClick={() => scrollToSection('newsletter')}
                       className="hover:text-white transition"
                     >
-                      Newsletter
+                      {tn.newsletter}
                     </button>
                   </li>
                 </>
               ) : (
                 <li>
                   <Link to="/" className="hover:text-white transition">
-                    Inicio
+                    {tn.home}
                   </Link>
                 </li>
               )}
@@ -69,23 +73,31 @@ const Footer = () => {
                   to="/privacidad"
                   className="hover:text-white transition"
                 >
-                  Política de Privacidad
+                  {tr.privacyPolicy}
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/terminos"
+                  className="hover:text-white transition"
+                >
+                  {tr.termsOfUse}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Contacto</h4>
+            <h4 className="font-semibold mb-4">{tr.contact}</h4>
             <p className="text-gray-400 mb-2">
               Email: contacto@mycar.app
             </p>
             <p className="text-gray-400 text-sm">
-              Privacidad: cristianvg9704@gmail.com
+              {tr.privacyLabel} cristianvg9704@gmail.com
             </p>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 MyCar. Todos los derechos reservados.</p>
+          <p>&copy; 2024 MyCar. {tr.rights}</p>
         </div>
       </div>
     </footer>

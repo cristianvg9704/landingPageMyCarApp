@@ -1,4 +1,8 @@
+import { useLanguage } from '../i18n/LanguageContext'
+
 const Features = () => {
+  const { t } = useLanguage();
+  const tr = t.features;
   const features = [
     {
       icon: (
@@ -6,8 +10,7 @@ const Features = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
         </svg>
       ),
-      title: "Registro de ingresos diarios",
-      description: "Registra fácilmente los ingresos de cada vehículo al final del día. Interfaz simple y rápida para que no pierdas tiempo."
+      ...tr.items[0]
     },
     {
       icon: (
@@ -15,8 +18,7 @@ const Features = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
         </svg>
       ),
-      title: "Múltiples servicios",
-      description: "Gestiona vehículos trabajando como taxi, paquetería, delivery o cualquier otro servicio de transporte."
+      ...tr.items[1]
     },
     {
       icon: (
@@ -24,8 +26,7 @@ const Features = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
         </svg>
       ),
-      title: "Estadísticas y reportes",
-      description: "Visualiza tus ingresos totales, promedios diarios y tendencias. Mantén tus cuentas siempre organizadas."
+      ...tr.items[2]
     }
   ];
 
@@ -34,10 +35,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Características destacadas
+            {tr.title}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Funcionalidades diseñadas para conductores y dueños de vehículos
+            {tr.subtitle}
           </p>
         </div>
 

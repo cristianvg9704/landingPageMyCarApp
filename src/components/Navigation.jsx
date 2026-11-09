@@ -1,6 +1,9 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const Navigation = () => {
+  const { lang, setLang, t } = useLanguage();
+  const tn = t.nav;
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -32,19 +35,19 @@ const Navigation = () => {
                   onClick={() => scrollToSection('producto')}
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
-                  Producto
+                  {tn.product}
                 </button>
                 <button 
                   onClick={() => scrollToSection('caracteristicas')}
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
-                  Características
+                  {tn.features}
                 </button>
                 <button 
                   onClick={() => scrollToSection('newsletter')}
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
-                  Newsletter
+                  {tn.newsletter}
                 </button>
               </>
             ) : (
@@ -53,7 +56,7 @@ const Navigation = () => {
                   to="/"
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
-                  Inicio
+                  {tn.home}
                 </Link>
               </>
             )}
@@ -61,9 +64,24 @@ const Navigation = () => {
               to="/privacidad"
               className="text-gray-600 hover:text-gray-900 transition"
             >
-              Privacidad
+              {tn.privacy}
+            </Link>
+            <Link 
+              to="/terminos"
+              className="text-gray-600 hover:text-gray-900 transition"
+            >
+              {tn.terms}
             </Link>
           </div>
+          <button
+            type="button"
+            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+            aria-label={t.langToggleLabel}
+            className="ml-4 flex items-center rounded-full border border-gray-300 text-sm font-semibold overflow-hidden"
+          >
+            <span className={`px-3 py-1 ${lang === 'es' ? 'bg-indigo-600 text-white' : 'text-gray-600'}`}>ES</span>
+            <span className={`px-3 py-1 ${lang === 'en' ? 'bg-indigo-600 text-white' : 'text-gray-600'}`}>EN</span>
+          </button>
         </div>
       </div>
     </nav>

@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Newsletter = () => {
+  const { t } = useLanguage();
+  const tr = t.newsletter;
   useEffect(() => {
     // Configurar campos de Mailchimp antes de cargar el script
     if (typeof window !== 'undefined') {
@@ -46,10 +49,10 @@ const Newsletter = () => {
     <section id="newsletter" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-600 to-blue-600">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Sé el primero en conocer MyCar
+          {tr.title}
         </h2>
         <p className="text-xl text-indigo-100 mb-8">
-          Suscríbete para recibir notificaciones cuando la app esté disponible y obtén acceso anticipado
+          {tr.subtitle}
         </p>
         
         <div className="bg-white rounded-xl p-8 shadow-2xl">
@@ -66,14 +69,14 @@ const Newsletter = () => {
               <div id="mc_embed_signup_scroll" className="space-y-4">
                 <div className="hidden">
                   <div className="indicates-required">
-                    <span className="asterisk text-red-500">*</span> indica requerido
+                    <span className="asterisk text-red-500">*</span> {tr.required}
                   </div>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex-1">
                     <label htmlFor="mce-EMAIL" className="block text-left text-sm font-medium text-gray-700 mb-1">
-                      Email <span className="text-red-500">*</span>
+                      {tr.email} <span className="text-red-500">*</span>
                     </label>
                     <input 
                       type="email" 
@@ -81,20 +84,20 @@ const Newsletter = () => {
                       className="required email w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" 
                       id="mce-EMAIL" 
                       required 
-                      placeholder="tu@email.com"
+                      placeholder={tr.emailPlaceholder}
                     />
                   </div>
                   
                   <div className="flex-1">
                     <label htmlFor="mce-FNAME" className="block text-left text-sm font-medium text-gray-700 mb-1">
-                      Nombre
+                      {tr.name}
                     </label>
                     <input 
                       type="text" 
                       name="FNAME" 
                       className="text w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" 
                       id="mce-FNAME" 
-                      placeholder="Tu nombre"
+                      placeholder={tr.namePlaceholder}
                     />
                   </div>
                 </div>
@@ -123,7 +126,7 @@ const Newsletter = () => {
                       id="mc-embedded-subscribe" 
                       className="w-full bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition shadow-lg"
                     >
-                      Suscribirse ahora
+                      {tr.submit}
                     </button>
                   </div>
                 </div>
@@ -133,7 +136,7 @@ const Newsletter = () => {
         </div>
         
         <p className="text-indigo-100 text-sm mt-6">
-          🔒 No compartimos tu información. Puedes cancelar tu suscripción en cualquier momento.
+          {tr.privacyNote}
         </p>
       </div>
 

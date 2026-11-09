@@ -1,4 +1,8 @@
+import { useLanguage } from '../i18n/LanguageContext'
+
 const UserTypes = () => {
+  const { t } = useLanguage();
+  const tr = t.users;
   const userTypes = [
     {
       icon: (
@@ -6,13 +10,7 @@ const UserTypes = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
         </svg>
       ),
-      title: "Para Conductores",
-      description: "Si eres conductor y trabajas con tu propio vehículo o varios vehículos, MyCar te ayuda a registrar y organizar todos tus ingresos diarios de forma sencilla.",
-      features: [
-        "Registra tus ganancias diarias",
-        "Gestiona múltiples vehículos",
-        "Visualiza tus estadísticas"
-      ]
+      ...tr.types[0]
     },
     {
       icon: (
@@ -20,13 +18,7 @@ const UserTypes = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
         </svg>
       ),
-      title: "Para Dueños de Vehículos",
-      description: "Si eres dueño de vehículos que los tienes trabajando con otros conductores, MyCar te permite llevar un control organizado de los ingresos de toda tu flota.",
-      features: [
-        "Control de ingresos por vehículo",
-        "Gestiona tu flota completa",
-        "Reportes consolidados"
-      ]
+      ...tr.types[1]
     }
   ];
 
@@ -35,10 +27,10 @@ const UserTypes = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Para conductores y dueños de vehículos
+            {tr.title}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            MyCar está diseñada para ayudarte sin importar si eres conductor o dueño de vehículos trabajando
+            {tr.subtitle}
           </p>
         </div>
 
