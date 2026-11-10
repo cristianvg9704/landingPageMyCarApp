@@ -27,6 +27,7 @@ try {
   const pages = [
     { url: '/privacidad', title: 'Política de Privacidad – MyCar' },
     { url: '/terminos', title: 'Términos de Uso – MyCar' },
+    { url: '/soporte', title: 'Soporte – MyCar' },
   ]
 
   for (const { url, title } of pages) {

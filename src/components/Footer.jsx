@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
+import { EMAIL } from './legal/LegalLayout'
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -70,6 +71,14 @@ const Footer = () => {
               )}
               <li>
                 <Link 
+                  to="/soporte"
+                  className="hover:text-white transition"
+                >
+                  {tr.support}
+                </Link>
+              </li>
+              <li>
+                <Link 
                   to="/privacidad"
                   className="hover:text-white transition"
                 >
@@ -88,16 +97,16 @@ const Footer = () => {
           </div>
           <div>
             <h4 className="font-semibold mb-4">{tr.contact}</h4>
-            <p className="text-gray-400 mb-2">
-              Email: contacto@mycar.app
-            </p>
-            <p className="text-gray-400 text-sm">
-              {tr.privacyLabel} cristianvg9704@gmail.com
+            <p className="text-gray-400 break-words">
+              Email:{' '}
+              <a href={`mailto:${EMAIL}`} className="hover:text-white transition underline">
+                {EMAIL}
+              </a>
             </p>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 MyCar. {tr.rights}</p>
+          <p>&copy; 2026 MyCar. {tr.rights}</p>
         </div>
       </div>
     </footer>

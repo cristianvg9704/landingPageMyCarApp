@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import TermsOfUsePage from './pages/TermsOfUsePage'
+import SupportPage from './pages/SupportPage'
 import { LanguageProvider } from './i18n/LanguageContext'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/privacidad" element={<PrivacyPolicyPage />} />
           <Route path="/terminos" element={<TermsOfUsePage />} />
+          <Route path="/soporte" element={<SupportPage />} />
         </Routes>
         <Footer />
     </div>

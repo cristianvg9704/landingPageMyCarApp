@@ -61,6 +61,12 @@ const Navigation = () => {
               </>
             )}
             <Link 
+              to="/soporte"
+              className="text-gray-600 hover:text-gray-900 transition"
+            >
+              {tn.support}
+            </Link>
+            <Link 
               to="/privacidad"
               className="text-gray-600 hover:text-gray-900 transition"
             >
